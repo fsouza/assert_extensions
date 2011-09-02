@@ -2,5 +2,5 @@ clean:
 	@rm -f *.out
 
 test: clean
-	@cc *.c
+	@cc -ansi -Wall *.c
 	@./a.out
