@@ -2,7 +2,7 @@
 #include <assert.h>
 #include "assert_extensions.h"
 
-static int test_count = 0;
+static int test_count;
 
 void test_check_equal_should_return_non_zero_for_equal_int_values() {
     test_count++;
