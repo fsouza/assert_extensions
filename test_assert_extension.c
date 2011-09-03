@@ -2,10 +2,9 @@
 #include <assert.h>
 #include "assert_extensions.h"
 
-int test_count = 0;
+static int test_count = 0;
 
 void test_check_equal_should_return_non_zero_for_equal_int_values() {
-    extern int test_count;
     test_count++;
 
     printf("1 should equal 1... ");
@@ -14,7 +13,6 @@ void test_check_equal_should_return_non_zero_for_equal_int_values() {
 }
 
 void test_check_equal_should_return_zero_for_non_equal_int_values() {
-    extern int test_count;
     test_count++;
 
     printf("1 + 1 should not equal 2... ");
@@ -23,7 +21,6 @@ void test_check_equal_should_return_zero_for_non_equal_int_values() {
 }
 
 void test_assert_equal_for_integer_values() {
-    extern int test_count;
     test_count++;
 
     printf("assert_equal(1, 1); should run nicely... ");
@@ -32,7 +29,6 @@ void test_assert_equal_for_integer_values() {
 }
 
 void test_assert_equal_should_quit_program_for_non_equal_int_values() {
-    extern int test_count;
     test_count++;
 
     printf("assert_equal(1, 2); should exit with status code 1... ");
@@ -46,7 +42,6 @@ int main (int argc, char const* argv[]) {
     test_assert_equal_for_integer_values();
     test_assert_equal_should_quit_program_for_non_equal_int_values();
 
-    extern int test_count;
     printf("\n\nRan %d tests.\n\n", test_count);
     return 0;
 }
